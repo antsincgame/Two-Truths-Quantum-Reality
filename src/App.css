@@ -1,0 +1,94 @@
+/* Дополнительные стили для квантово-буддийского интерфейса */
+
+.quantum-glow {
+  animation: quantumGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes quantumGlow {
+  from {
+    box-shadow: 0 0 5px rgba(79, 195, 247, 0.3);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(79, 195, 247, 0.8), 0 0 30px rgba(186, 104, 200, 0.6);
+  }
+}
+
+.buddhist-breath {
+  animation: buddhistBreath 4s ease-in-out infinite;
+}
+
+@keyframes buddhistBreath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.cosmic-flow {
+  animation: cosmicFlow 8s linear infinite;
+}
+
+@keyframes cosmicFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Улучшенные шрифты для санскрита и тибетского */
+.sanskrit-text {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-feature-settings: 'liga' on, 'calt' on;
+}
+
+.tibetan-text {
+  font-family: 'Noto Sans Tibetan', serif;
+  font-feature-settings: 'liga' on, 'calt' on;
+}
+
+/* Эффекты частиц */
+.particle-field {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle-field::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(79,195,247,0.3)"/></svg>') repeat;
+  animation: particleFloat 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
+/* Отзывчивые размеры */
+@media (max-width: 768px) {
+  .quantum-glow {
+    animation-duration: 2s;
+  }
+  
+  .particle-field::before {
+    animation-duration: 15s;
+  }
+} 
